@@ -2,6 +2,7 @@
   "version": "1.0.0",
   "updated": "2025-09-01T00:00:00Z",
   "items": [
-    {"id": "a1", "label": "Hello, Thunkable"}
+    {"id": "a1", "label": "Hello, Thunkable"},
+    {"id": "a2", "label": "Sawasdee, K2"}
   ]
-} 
+}
