@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "updated": "2025-09-04T00:00:00Z",
+  "title": "The Lost Cat",
+  "level": { "label": "Beginner", "difficulty": 3 },
+  "story_id": 1,
+  "chapter": "A",
+  "thumbnail": "lostcat.jpg",
+  "sentences": [
+    { "thai": "ลูกโมนี่กับยูโปปอนมีแมวหนึ่งตัว", "english": "Lookmonee and Yupopon have one cat.", "audio": "lostcat_1.mp3" },
+    { "thai": "ชื่อแมวคือเหมียว", "english": "The cat's name is Meow.", "audio": "lostcat_2.mp3" },
+    { "thai": "เหมียวสีดำและขาว", "english": "Meow is black and white.", "audio": "lostcat_3.mp3" },
+    { "thai": "วันนี้ เหมียวหายไป", "english": "Today, Meow disappeared.", "audio": "lostcat_4.mp3" },
+    { "thai": "ยูโปปอนร้องไห้", "english": "Yupopon cried.", "audio": "lostcat_5.mp3" },
+    { "thai": "ลูกโมนี่มองใต้โต๊ะ", "english": "Lookmonee looked under the table.", "audio": "lostcat_6.mp3" },
+    { "thai": "ไม่มีแมว", "english": "No cat.", "audio": "lostcat_7.mp3" },
+    { "thai": "เธอเปิดประตู", "english": "She opened the door.", "audio": "lostcat_8.mp3" },
+    { "thai": "ฝนเริ่มตก", "english": "Rain began to fall.", "audio": "lostcat_9.mp3" },
+    { "thai": "พวกเขาเรียกว่า 'เหมียว เหมียว!'", "english": "They called, 'Meow, Meow!'", "audio": "lostcat_10.mp3" },
+    { "thai": "เงียบ", "english": "Silence.", "audio": "lostcat_11.mp3" },
+    { "thai": "เสียงแมวร้องดังมาจากห้องนอน", "english": "A cat's cry came from the bedroom.", "audio": "lostcat_12.mp3" },
+    { "thai": "เหมียวนอนในตะกร้าผ้า", "english": "Meow was sleeping in the laundry basket.", "audio": "lostcat_13.mp3" },
+    { "thai": "ลูกโมนี่และยูโปปอนยิ้ม", "english": "Lookmonee and Yupopon smiled.", "audio": "lostcat_14.mp3" },
+    { "thai": "พวกเขาห่มผ้าให้เหมียว", "english": "They covered Meow with a blanket.", "audio": "lostcat_15.mp3" },
+    { "thai": "เหมียวหลับอีกครั้ง", "english": "Meow fell asleep again.", "audio": "lostcat_16.mp3" }
+  ]
+}
