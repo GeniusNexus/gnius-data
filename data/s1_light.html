@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <style>
+    /* Let touches pass through the WebView */
+    html, body {
+      height: 100%;
+      margin: 0;
+      pointer-events: none;
+    }
+
+    /* Safe-area friendly full-screen background */
+    .bg {
+      position: fixed;
+      inset: 0;
+      /* Screen 1 — LIGHT (top→bottom) */
+      background: linear-gradient(
+        180deg,
+        #E0EAFC 0%,
+        #A7BFE8 62%,
+        #F5F7FA 100%
+      );
+      /* optional: soft horizon band */
+      background-image:
+        radial-gradient(100% 30% at 50% 70%, rgba(255,255,255,0.35), rgba(255,255,255,0) 70%),
+        linear-gradient(180deg,#E0EAFC 0%,#A7BFE8 62%,#F5F7FA 100%);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* Support device notches gracefully (iOS) */
+    .safe {
+      position: fixed;
+      inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg safe"></div>
+</body>
+</html>
