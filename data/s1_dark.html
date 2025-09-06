@@ -1,27 +1,11 @@
 <!doctype html>
 <html lang="en">
-<head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <style>
     /* Let touches pass through the WebView */
-    html, body {
-      height: 100%;
-      margin: 0;
-      pointer-events: none;
-    }
-
-    /* Safe-area friendly full-screen background */
-    .bg {
-      position: fixed;
-      inset: 0;
-      /* Screen 1 — DARK (top→bottom) */
-      background: linear-gradient(
-        180deg,
-        #0B0C10 0%,
-        #1F2833 62%,
-        #C5C6C7 100%
-      );
+html, body { height: 100%; margin: 0; pointer-events: none; -webkit-tap-highlight-color: transparent; overscroll-behavior: none; }
+.bg { background-attachment: fixed; };
       /* optional: soft horizon band */
       /* multiple backgrounds: the first is on top */
       background-image:
