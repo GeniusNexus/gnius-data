@@ -4,20 +4,36 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <style>
-    html, body { height:100%; margin:0; pointer-events:none; -webkit-tap-highlight-color:transparent; overscroll-behavior:none; }
-    .bg { background-attachment:fixed; }
-
+    /* Let touches pass through; kill white fallback */
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      background: transparent;
+      pointer-events: none;
+      -webkit-tap-highlight-color: transparent;
+      overscroll-behavior: none;
+    }
+    /* Fixed, full-bleed layer */
     .bg {
-      position:fixed; inset:0;
+      position: fixed;
+      inset: 0;
+      background-attachment: fixed;
+      /* Screen 1 — LIGHT (top→bottom) */
       background: linear-gradient(180deg, #EAF2FF 0%, #CFE0FF 62%, #FFFFFF 100%);
+      /* soft horizon band + base gradient (first declared is on top) */
       background-image:
         radial-gradient(100% 30% at 50% 70%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%),
         linear-gradient(180deg, #EAF2FF 0%, #CFE0FF 62%, #FFFFFF 100%);
-      background-repeat:no-repeat;
-      background-size:cover;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
-
-    .safe { position:fixed; inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+    /* Respect notches / safe areas */
+    .safe {
+      position: fixed;
+      inset: env(safe-area-inset-top) env(safe-area-inset-right)
+             env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
   </style>
 </head>
 <body>
