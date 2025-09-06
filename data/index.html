@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Awakening Gradients • Preview</title>
+  <style>
+    :root{
+      --bg:#0b0c10; --card:#11141a; --ink:#e8eefc; --muted:#aeb6c5; --accent:#6e86ff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#0b0c10,#1a1f29);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    .wrap{max-width:880px;margin:0 auto;padding:24px}
+    h1{color:var(--ink);font-size:22px;margin:0 0 12px}
+    p{color:var(--muted);margin:0 0 16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .card{
+      background:linear-gradient(180deg,#11141a,#0c0f14);
+      border:1px solid #1f2a3a; border-radius:16px; padding:16px;
+      box-shadow:0 8px 24px rgba(0,0,0,.25);
+    }
+    .title{color:var(--ink);font-weight:600;margin:0 0 12px}
+    .btn{
+      display:flex;align-items:center;justify-content:center; gap:10px;
+      width:100%; padding:12px 14px; border-radius:12px; border:1px solid #2a3550;
+      background:linear-gradient(180deg,#27345a,#1f2a46); color:#eaf0ff; text-decoration:none;
+      font-weight:600; letter-spacing:.2px;
+    }
+    .btn:hover{filter:brightness(1.06)}
+    .row{display:flex;gap:10px}
+    .row .btn{flex:1}
+    footer{margin-top:20px;color:#8090a8;font-size:12px;text-align:center}
+    code{color:#cfe1ff;background:#0e1218;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Awakening • Gradient Previews</h1>
+    <p>Tap to open each background in a new tab. Cache-buster is appended automatically.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="title">Screen 1 — Hello</div>
+        <div class="row">
+          <a class="btn" target="_blank" id="s1d">Dark</a>
+          <a class="btn" target="_blank" id="s1l">Light</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">Screen 2 — Compass</div>
+        <div class="row">
+          <a class="btn" target="_blank" id="s2d">Dark</a>
+          <a class="btn" target="_blank" id="s2l">Light</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">Screen 3 — Fog of Reality</div>
+        <div class="row">
+          <a class="btn" target="_blank" id="s3d">Dark</a>
+          <a class="btn" target="_blank" id="s3l">Light</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Served via GitHub Pages. Paths under <code>/data/</code>. Buttons add <code>?v=&lt;timestamp&gt;</code>.
+    </footer>
+  </div>
+
+  <script>
+    // Base path (this file lives in /data/, so links are sibling files)
+    const base = '';
+    const withBust = p => `${base}${p}?v=${Date.now()}`;
+
+    const linkMap = {
+      s1d: 's1_dark.html',  s1l: 's1_light.html',
+      s2d: 's2_dark.html',  s2l: 's2_light.html',
+      s3d: 's3_dark.html',  s3l: 's3_light.html'
+    };
+    for (const id in linkMap) {
+      const el = document.getElementById(id);
+      el.href = withBust(linkMap[id]);
+    }
+  </script>
+</body>
+</html>
