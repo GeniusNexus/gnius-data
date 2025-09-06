@@ -4,30 +4,20 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      pointer-events: none;
-    }
+    html, body { height:100%; margin:0; pointer-events:none; -webkit-tap-highlight-color:transparent; overscroll-behavior:none; }
+    .bg { background-attachment:fixed; }
+
     .bg {
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        #F2F2F2 0%,
-        #D6CBC4 55%,
-        #B0A8A4 100%
-      );
+      position:fixed; inset:0;
+      background: linear-gradient(180deg, #FFF2E6 0%, #FFDACC 50%, #FFFFFF 100%);
       background-image:
-        radial-gradient(120% 40% at 50% 75%, rgba(200,200,200,0.25), rgba(255,255,255,0) 80%),
-        linear-gradient(180deg,#F2F2F2 0%,#D6CBC4 55%,#B0A8A4 100%);
-      background-repeat: no-repeat;
-      background-size: cover;
+        radial-gradient(100% 35% at 50% 70%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, #FFF2E6 0%, #FFDACC 50%, #FFFFFF 100%);
+      background-repeat:no-repeat;
+      background-size:cover;
     }
-    .safe {
-      position: fixed;
-      inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-    }
+
+    .safe { position:fixed; inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
   </style>
 </head>
 <body>
