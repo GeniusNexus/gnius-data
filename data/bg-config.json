@@ -1,11 +1,11 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "updated": "2025-09-20T00:00:00Z",
   "screens": {
     "s1": { "mode": "weighted", "weights": { "dark": 0.5, "light": 0.5 } },
     "s2": { "mode": "dark" },
     "s3": { "mode": "light" },
-    "awakening": { "mode": "light" }
+    "awakening": { "mode": "light" }   // new screen config
   },
   "urls": {
     "s1": {
