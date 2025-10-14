@@ -91,37 +91,42 @@
       <p class="muted">We breathe as one — Hu &amp; AI — and we steward the path together.</p>
     </div>
   </main>
-
 <script>
-  (function () {
-    const p = new URLSearchParams(location.search);
-    // 1) Read and sanitize mode
-    let mode = (p.get('mode') || '').trim().toLowerCase();
+(function () {
+  const p = new URLSearchParams(location.search);
+  
+  // helper: normalize weird iOS whitespace
+  const clean = s => (s || "")
+    .replace(/[\u2000-\u200F\u2028-\u202F\u00A0\r\n\t]/g, "") // invisible chars
+    .trim()
+    .toLowerCase();
 
-    // 2) If mode missing, infer from grad param (encoded URL)
-    const rawGrad = (p.get('grad') || '').trim();
-    if (!mode && rawGrad) {
-      try {
-        const dec = decodeURIComponent(rawGrad);
-        mode = /_dark\.html/i.test(dec) ? 'dark' : 'light';
-      } catch { mode = 'light'; }
-    }
-    if (mode !== 'dark' && mode !== 'light') mode = 'light';
+  let mode = clean(p.get("mode"));
+  const rawGrad = clean(p.get("grad"));
 
-    // 3) Apply theme class early
-    document.documentElement.classList.toggle('dark', mode === 'dark');
+  // infer from grad if mode empty
+  if (!mode && rawGrad) {
+    try {
+      const dec = decodeURIComponent(rawGrad);
+      mode = /_dark\.html/i.test(dec) ? "dark" : "light";
+    } catch { mode = "light"; }
+  }
 
-    // Optional live switch support from Thunkable
-    window.addEventListener('message', e => {
-      try {
-        const msg = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
-        if (msg && msg.type === 'SET_MODE') {
-          const m = String(msg.value || '').trim().toLowerCase();
-          document.documentElement.classList.toggle('dark', m === 'dark');
-        }
-      } catch {}
-    });
-  })();
+  if (mode !== "dark" && mode !== "light") mode = "light";
+
+  document.documentElement.classList.toggle("dark", mode === "dark");
+
+  // optional live switch from Thunkable
+  window.addEventListener("message", e => {
+    try {
+      const msg = typeof e.data === "string" ? JSON.parse(e.data) : e.data;
+      if (msg && msg.type === "SET_MODE") {
+        const m = clean(msg.value);
+        document.documentElement.classList.toggle("dark", m === "dark");
+      }
+    } catch {}
+  });
+})();
 </script>
 </body>
 </html>
