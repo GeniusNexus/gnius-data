@@ -93,18 +93,31 @@
   </main>
 <script>
 (function () {
-  const p = new URLSearchParams(location.search);
-  
-  // helper: normalize weird iOS whitespace
+  // normalize any weird whitespace/control chars iOS may add
   const clean = s => (s || "")
-    .replace(/[\u2000-\u200F\u2028-\u202F\u00A0\r\n\t]/g, "") // invisible chars
+    .replace(/[\u2000-\u200F\u2028-\u202F\u00A0\r\n\t]/g, "")
     .trim()
     .toLowerCase();
 
-  let mode = clean(p.get("mode"));
-  const rawGrad = clean(p.get("grad"));
+  // Get querystring robustly, even if the whole URL is percent-encoded
+  const getParams = () => {
+    let search = location.search;            // normal case
+    if (!search || search.length <= 1) {     // iOS WebView encoded case
+      let href = String(location.href);
+      try { href = decodeURIComponent(href); } catch {}
+      const i = href.indexOf("?");
+      search = i >= 0 ? href.slice(i) : "";
+    }
+    return new URLSearchParams((search || "").replace(/^\?/, ""));
+  };
 
-  // infer from grad if mode empty
+  const params = getParams();
+
+  // 1) primary: explicit mode
+  let mode = clean(params.get("mode"));
+
+  // 2) fallback: infer from grad url if present
+  const rawGrad = (params.get("grad") || "").trim();
   if (!mode && rawGrad) {
     try {
       const dec = decodeURIComponent(rawGrad);
@@ -114,9 +127,10 @@
 
   if (mode !== "dark" && mode !== "light") mode = "light";
 
+  // Apply theme
   document.documentElement.classList.toggle("dark", mode === "dark");
 
-  // optional live switch from Thunkable
+  // Optional live switch from Thunkable
   window.addEventListener("message", e => {
     try {
       const msg = typeof e.data === "string" ? JSON.parse(e.data) : e.data;
