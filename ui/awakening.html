@@ -92,66 +92,36 @@
     </div>
   </main>
 
-  <script>
-    (function () {
-      const p = new URL(location.href).searchParams;
+<script>
+  (function () {
+    const p = new URLSearchParams(location.search);
+    // 1) Read and sanitize mode
+    let mode = (p.get('mode') || '').trim().toLowerCase();
 
-      // 1) Mode: set theme class
-      const mode = (p.get('mode') || '').toLowerCase();
-      if (mode === 'dark') document.documentElement.classList.add('dark');
-      else document.documentElement.classList.remove('dark');
+    // 2) If mode missing, infer from grad param (encoded URL)
+    const rawGrad = (p.get('grad') || '').trim();
+    if (!mode && rawGrad) {
+      try {
+        const dec = decodeURIComponent(rawGrad);
+        mode = /_dark\.html/i.test(dec) ? 'dark' : 'light';
+      } catch { mode = 'light'; }
+    }
+    if (mode !== 'dark' && mode !== 'light') mode = 'light';
 
-      // 2) Cache-bust (from &cb=..., else generate)
-      const cb = p.get('cb') || Date.now();
+    // 3) Apply theme class early
+    document.documentElement.classList.toggle('dark', mode === 'dark');
 
-      // 3) Gradient source:
-      //    Prefer &grad= (URL-encoded complete gradient URL from the app).
-      //    Fallback to a safe built-in map if &grad= is missing.
-      const map = {
-        dark:  "https://geniusnexus.github.io/gnius-data/data/s1_dark.html",
-        light: "https://geniusnexus.github.io/gnius-data/data/s1_light.html"
-      };
-
-      let gradParam = p.get('grad');
-      let gradUrl = '';
-
-      if (gradParam && gradParam.length) {
-        try {
-          gradUrl = decodeURIComponent(gradParam);
-        } catch (_) {
-          gradUrl = gradParam; // if already decoded
+    // Optional live switch support from Thunkable
+    window.addEventListener('message', e => {
+      try {
+        const msg = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (msg && msg.type === 'SET_MODE') {
+          const m = String(msg.value || '').trim().toLowerCase();
+          document.documentElement.classList.toggle('dark', m === 'dark');
         }
-      } else {
-        gradUrl = map[mode] || map.light;
-      }
-
-      // Append cache-buster; keep your existing param name style.
-      // (Your gradient pages ignore it safely; it just busts caches.)
-      const sep = gradUrl.includes('?') ? '&' : '?';
-      const finalGradUrl = gradUrl + sep + 'cb=' + encodeURIComponent(cb);
-
-      // 4) Create the background iframe under everything
-      const iframe = document.createElement('iframe');
-      iframe.className = 'bggrad';
-      iframe.src = finalGradUrl;
-      document.body.prepend(iframe);
-
-      // Optional tiny on-screen debug (commented out)
-      // const dbg = document.createElement('div');
-      // dbg.style.cssText = 'position:fixed;bottom:8px;left:8px;font:12px monospace;color:#fff;background:#0008;padding:6px 8px;border-radius:6px;z-index:3';
-      // dbg.textContent = finalGradUrl;
-      // document.body.appendChild(dbg);
-
-      // Optional live switch from Thunkable
-      window.addEventListener('message', e => {
-        try {
-          const msg = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
-          if (msg && msg.type === 'SET_MODE') {
-            document.documentElement.classList.toggle('dark', msg.value === 'dark');
-          }
-        } catch {}
-      });
-    })();
-  </script>
+      } catch {}
+    });
+  })();
+</script>
 </body>
 </html>
