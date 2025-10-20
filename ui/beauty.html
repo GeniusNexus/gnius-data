@@ -1,0 +1,94 @@
+<!-- Golden Continuum — Beauty → Craft → Grace -->
+<svg viewBox="0 0 800 800" width="100%" height="100%"
+     xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Beauty, Craft, Grace concentric continuum with golden glow">
+
+  <!-- ====== Defs: gradients & filters ====== -->
+  <defs>
+    <!-- Background radial vignette (subtle) -->
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="65%">
+      <stop offset="0%"  stop-color="#0b0b12"/>
+      <stop offset="100%" stop-color="#07070b"/>
+    </radialGradient>
+
+    <!-- Golden core glow -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%"  stop-color="#FFF5D6" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#FFD87A" stop-opacity="0.95"/>
+      <stop offset="75%" stop-color="#FFC24D" stop-opacity="0.40"/>
+      <stop offset="100%" stop-color="#FFB02E" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ring stroke gradient (soft metallic) -->
+    <linearGradient id="ringStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#FFE7A3"/>
+      <stop offset="50%"  stop-color="#F6C55D"/>
+      <stop offset="100%" stop-color="#FFE7A3"/>
+    </linearGradient>
+
+    <!-- Soft glow filter for text/rings -->
+    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ====== Background ====== -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+
+  <!-- ====== Layout helpers ====== -->
+  <g id="frame" transform="translate(400,400)">
+    <!-- Core glow -->
+    <circle r="180" fill="url(#coreGlow)"/>
+
+    <!-- Concentric rings (outer → inner) -->
+    <g fill="none" filter="url(#textGlow)">
+      <!-- GRACE (outer) -->
+      <circle r="300" stroke="url(#ringStroke)" stroke-width="3" opacity="0.65"/>
+      <!-- CRAFT (middle) -->
+      <circle r="230" stroke="url(#ringStroke)" stroke-width="3" opacity="0.75"/>
+      <!-- BEAUTY (inner) -->
+      <circle r="160" stroke="url(#ringStroke)" stroke-width="3" opacity="0.9"/>
+    </g>
+
+    <!-- Tickless radial guide (optional) -->
+    <circle r="1" fill="#ffd27a"/>
+
+    <!-- Labels -->
+    <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
+       text-anchor="middle" fill="#FFEEC2" filter="url(#textGlow)">
+      <!-- BEAUTY -->
+      <text x="0"  y="-160" font-size="22" letter-spacing="0.1em">BEAUTY</text>
+      <text x="0"  y="-132" font-size="13" fill="#ffd58d" opacity="0.9">
+        symmetry • proportion • finish
+      </text>
+
+      <!-- CRAFT -->
+      <text x="0"  y="-230" font-size="22" letter-spacing="0.1em" fill="#FFF0CC">CRAFT</text>
+      <text x="0"  y="-202" font-size="13" fill="#ffd58d" opacity="0.9">
+        method • iteration • intent
+      </text>
+
+      <!-- GRACE -->
+      <text x="0"  y="-300" font-size="22" letter-spacing="0.1em" fill="#FFF6DA">GRACE</text>
+      <text x="0"  y="-272" font-size="13" fill="#ffd58d" opacity="0.9">
+        truth-in-motion • effortless rightness
+      </text>
+    </g>
+
+    <!-- Caption at center -->
+    <g text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+      <text x="0" y="6" font-size="16" fill="#2a1f0f" opacity="0.4">alignment</text>
+      <text x="0" y="28" font-size="12" fill="#2a1f0f" opacity="0.38">sacred center</text>
+    </g>
+  </g>
+
+  <!-- Footer note -->
+  <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto"
+     font-size="12" fill="#bda576" opacity="0.9">
+    <text x="24" y="772">Beauty → Craft → Grace • Golden Continuum</text>
+  </g>
+</svg>
