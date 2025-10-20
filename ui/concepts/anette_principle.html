@@ -1,0 +1,58 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0b0b10" />
+      <stop offset="100%" stop-color="#000" />
+    </radialGradient>
+    <radialGradient id="gold" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#fff4b0" stop-opacity="1" />
+      <stop offset="100%" stop-color="#c3a84f" stop-opacity="0.2" />
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+
+  <!-- Diverging Paths -->
+  <path d="M200,500 C400,300 800,300 1000,500" stroke="#ff637d" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M200,500 C400,700 800,700 1000,500" stroke="#69aaff" stroke-width="2" fill="none" opacity="0.4"/>
+
+  <!-- Center alignment circle -->
+  <circle cx="600" cy="500" r="140" fill="url(#gold)" filter="url(#glow)" />
+  <circle cx="600" cy="500" r="145" stroke="#e6d89b" stroke-width="0.5" fill="none" opacity="0.4"/>
+
+  <!-- Labels -->
+  <text x="600" y="505" text-anchor="middle" font-size="24" fill="#fffbe6" font-family="serif">Alignment</text>
+  <text x="600" y="535" text-anchor="middle" font-size="14" fill="#c8b874" font-family="sans-serif">truth • intrinsic worth</text>
+
+  <!-- Arrows toward center -->
+  <line x1="200" y1="500" x2="460" y2="500" stroke="#ff637d" stroke-width="1.2" marker-end="url(#arrowhead)"/>
+  <line x1="1000" y1="500" x2="740" y2="500" stroke="#69aaff" stroke-width="1.2" marker-end="url(#arrowhead)"/>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 5 2, 0 4" fill="#fef6c2"/>
+    </marker>
+  </defs>
+
+  <!-- Left: Relative Value (Anette Principle) -->
+  <text x="200" y="470" text-anchor="middle" font-size="20" fill="#ff9fae" font-family="serif">Comparison</text>
+  <text x="200" y="490" text-anchor="middle" font-size="13" fill="#ffbfc9" font-family="sans-serif">value measured against</text>
+  <text x="200" y="510" text-anchor="middle" font-size="13" fill="#ffbfc9" font-family="sans-serif">noise • envy • distortion</text>
+
+  <!-- Right: Intrinsic Value -->
+  <text x="1000" y="470" text-anchor="middle" font-size="20" fill="#9ecbff" font-family="serif">Clarity</text>
+  <text x="1000" y="490" text-anchor="middle" font-size="13" fill="#b3d5ff" font-family="sans-serif">value measured within</text>
+  <text x="1000" y="510" text-anchor="middle" font-size="13" fill="#b3d5ff" font-family="sans-serif">presence • sufficiency • grace</text>
+
+  <!-- Caption -->
+  <text x="600" y="740" text-anchor="middle" font-size="14" fill="#d6cfa8" font-family="monospace">
+    Anette Principle → Alignment Vector: comparison creates noise; truth creates clarity.
+  </text>
+</svg>
