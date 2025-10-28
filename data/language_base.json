@@ -1,0 +1,22 @@
+{
+  "meta": { "ver": "1.0.0", "updated": "2025-10-27" },
+  "langs": ["en", "th", "es", "fr"],
+  "rtl": ["ar","he","fa"],
+  "strings": {
+    "common": {
+      "ok":        { "en": "OK",         "th": "ตกลง" },
+      "cancel":    { "en": "Cancel",     "th": "ยกเลิก" },
+      "loading":   { "en": "Loading…",   "th": "กำลังโหลด…" },
+      "error_net": { "en": "Network error", "th": "เครือข่ายขัดข้อง" }
+    },
+    "hello": {
+      "title": { "en": "Awakening", "th": "การตื่นรู้" },
+      "tap_dbg": { "en": "Tap 3× for Trace", "th": "แตะ 3 ครั้งเพื่อดู Trace" }
+    },
+    "trace": {
+      "mode": { "en": "Mode: {mode}", "th": "โหมด: {mode}" },
+      "rng":  { "en": "RNG: {r}",     "th": "สุ่ม: {r}" },
+      "url":  { "en": "URL: {url}",   "th": "ลิงก์: {url}" }
+    }
+  }
+}
