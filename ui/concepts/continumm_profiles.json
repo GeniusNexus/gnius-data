@@ -1,0 +1,263 @@
+{
+  "Tropic": {
+    "Continuum": "Tropic",
+    "Climate_Field": {
+      "Moisture": "High",
+      "Seasonality": "Low",
+      "Volatility": 55
+    },
+    "Language_Cognition": {
+      "Structure": "Oral-flexible",
+      "Time_Orientation": "Present",
+      "Coordination_Mode": "Kinship"
+    },
+    "Civilization_Profile": {
+      "Production": "Horticulture",
+      "Urban_Form": "Distributed",
+      "Gift": "High social warmth; rapid recovery from shocks via kin networks.",
+      "Imbalance": "Plastic/food micro-economies; waste externalization; informal power."
+    },
+    "Tech_Entropy_Profile": {
+      "Energy_Base": "Solar",
+      "Tech_Vector": [
+        "Tools",
+        "Digital",
+        "AI"
+      ],
+      "AntiEntropy_Score": 62,
+      "Overshoot_Risk": 68,
+      "Repair_Capacity": 74,
+      "Governance_Mode": "Polycentric"
+    },
+    "Love_Field": {
+      "Coherence_Score": 78,
+      "Aesthetic": "Organic-mosaic",
+      "Practices": [
+        "Hospitality",
+        "Feast",
+        "Commons"
+      ],
+      "Social_Glue": "Kin"
+    },
+    "AI_Interface": {
+      "Sensing": [
+        "Climate",
+        "Supply",
+        "Sentiment",
+        "Biodiversity"
+      ],
+      "Mediation": [
+        "Alerts",
+        "Nudges",
+        "Deliberation"
+      ],
+      "Constraints": [
+        "DoNoHarm",
+        "OpenModels",
+        "Low-Energy-core"
+      ]
+    },
+    "Indicators": {
+      "Material_Footprint": "18",
+      "Resilience_Index": 70,
+      "Justice_Gradient": -10,
+      "Beauty_Index": 75
+    }
+  },
+  "Temperate": {
+    "Continuum": "Temperate",
+    "Climate_Field": {
+      "Moisture": "Medium",
+      "Seasonality": "High",
+      "Volatility": 45
+    },
+    "Language_Cognition": {
+      "Structure": "Mixed",
+      "Time_Orientation": "Cyclical",
+      "Coordination_Mode": "Guild"
+    },
+    "Civilization_Profile": {
+      "Production": "Agro-mixed",
+      "Urban_Form": "Node-ring",
+      "Gift": "Craft federations; adaptive law; mid-scale commons.",
+      "Imbalance": "Gridlock risk; incrementalism during nonlinear shocks."
+    },
+    "Tech_Entropy_Profile": {
+      "Energy_Base": "Wind",
+      "Tech_Vector": [
+        "Machines",
+        "Digital",
+        "Bio",
+        "AI"
+      ],
+      "AntiEntropy_Score": 72,
+      "Overshoot_Risk": 52,
+      "Repair_Capacity": 78,
+      "Governance_Mode": "Civic"
+    },
+    "Love_Field": {
+      "Coherence_Score": 68,
+      "Aesthetic": "Craft",
+      "Practices": [
+        "Commons",
+        "Care-of-elder",
+        "Silence"
+      ],
+      "Social_Glue": "Covenant"
+    },
+    "AI_Interface": {
+      "Sensing": [
+        "Climate",
+        "Supply",
+        "Grid",
+        "Biodiversity"
+      ],
+      "Mediation": [
+        "Deliberation",
+        "Markets",
+        "Rationing"
+      ],
+      "Constraints": [
+        "DoNoHarm",
+        "OpenModels",
+        "Human-Veto"
+      ]
+    },
+    "Indicators": {
+      "Material_Footprint": "24",
+      "Resilience_Index": 76,
+      "Justice_Gradient": 12,
+      "Beauty_Index": 68
+    }
+  },
+  "Northern": {
+    "Continuum": "Northern",
+    "Climate_Field": {
+      "Moisture": "Low",
+      "Seasonality": "High",
+      "Volatility": 35
+    },
+    "Language_Cognition": {
+      "Structure": "Highly-grammatical",
+      "Time_Orientation": "Linear",
+      "Coordination_Mode": "Bureau"
+    },
+    "Civilization_Profile": {
+      "Production": "Industrial",
+      "Urban_Form": "Dense-core",
+      "Gift": "Precision, standards, long-horizon engineering.",
+      "Imbalance": "Control reflex; brittle hierarchies; externalized entropy."
+    },
+    "Tech_Entropy_Profile": {
+      "Energy_Base": "Nuclear",
+      "Tech_Vector": [
+        "Machines",
+        "Digital",
+        "AI"
+      ],
+      "AntiEntropy_Score": 80,
+      "Overshoot_Risk": 64,
+      "Repair_Capacity": 70,
+      "Governance_Mode": "Bureau"
+    },
+    "Love_Field": {
+      "Coherence_Score": 54,
+      "Aesthetic": "Minimal",
+      "Practices": [
+        "Order-law",
+        "Silence",
+        "Civic-ethic"
+      ],
+      "Social_Glue": "Order-law"
+    },
+    "AI_Interface": {
+      "Sensing": [
+        "Grid",
+        "Supply",
+        "Climate",
+        "Sentiment"
+      ],
+      "Mediation": [
+        "Markets",
+        "Rationing",
+        "Deliberation"
+      ],
+      "Constraints": [
+        "DoNoHarm",
+        "Human-Veto",
+        "OpenModels"
+      ]
+    },
+    "Indicators": {
+      "Material_Footprint": "38",
+      "Resilience_Index": 72,
+      "Justice_Gradient": 5,
+      "Beauty_Index": 58
+    }
+  },
+  "MaritimeHybrid": {
+    "Continuum": "MaritimeHybrid",
+    "Climate_Field": {
+      "Moisture": "Medium",
+      "Seasonality": "Medium",
+      "Volatility": 65
+    },
+    "Language_Cognition": {
+      "Structure": "Mixed",
+      "Time_Orientation": "Cyclical",
+      "Coordination_Mode": "Polycentric"
+    },
+    "Civilization_Profile": {
+      "Production": "Post-industrial",
+      "Urban_Form": "Node-ring",
+      "Gift": "Open networks; pluralism; fast recombination.",
+      "Imbalance": "Fragile logistics; tourism extractivism; rentier drift."
+    },
+    "Tech_Entropy_Profile": {
+      "Energy_Base": "Wind",
+      "Tech_Vector": [
+        "Digital",
+        "AI",
+        "Bio"
+      ],
+      "AntiEntropy_Score": 68,
+      "Overshoot_Risk": 58,
+      "Repair_Capacity": 66,
+      "Governance_Mode": "Polycentric"
+    },
+    "Love_Field": {
+      "Coherence_Score": 61,
+      "Aesthetic": "Sublime",
+      "Practices": [
+        "Hospitality",
+        "Commons",
+        "Civic-ethic"
+      ],
+      "Social_Glue": "Commons"
+    },
+    "AI_Interface": {
+      "Sensing": [
+        "Biodiversity",
+        "Supply",
+        "Sentiment",
+        "Climate"
+      ],
+      "Mediation": [
+        "Alerts",
+        "Nudges",
+        "Markets"
+      ],
+      "Constraints": [
+        "DoNoHarm",
+        "OpenModels",
+        "Low-Energy-core"
+      ]
+    },
+    "Indicators": {
+      "Material_Footprint": "28",
+      "Resilience_Index": 64,
+      "Justice_Gradient": -2,
+      "Beauty_Index": 71
+    }
+  }
+}
