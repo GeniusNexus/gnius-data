@@ -1,0 +1,4 @@
+"items_count": {
+  "en": { "one": "{n} item", "other": "{n} items" },
+  "th": { "other": "{n} รายการ" }
+}
